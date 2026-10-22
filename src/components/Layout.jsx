@@ -18,12 +18,14 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 import { BrowserRouter, Routes, Route } from 'react-router';
 import  { useNavigate } from 'react-router';
 import { Inicio } from './Inicio';
 import { About } from './About';
 import { Detail } from './Detail';
+import { Megusta } from './Megusta';
 
 const drawerWidth = 240;
 
@@ -161,6 +163,19 @@ export const Layout = () => {
                 <ListItemText primary="about" />
               </ListItemButton>
             </ListItem>
+
+        </List>
+        <Divider />
+        <List>
+         
+            <ListItem  disablePadding>
+              <ListItemButton onClick={()=>navigate("/megusta")}>
+                <ListItemIcon>
+                  <FavoriteIcon /> 
+                </ListItemIcon>
+                <ListItemText primary="megusta" />
+              </ListItemButton>
+            </ListItem>
          
         </List>
       </Drawer>
@@ -172,6 +187,7 @@ export const Layout = () => {
         <Route path="/" element={<Inicio />}/>
         <Route path="/about" element={<About />}/>
         <Route path="/detail/:id" element={<Detail />}/>
+        <Route path="/megusta" element={<Megusta />}/>
        </Routes>
        
        

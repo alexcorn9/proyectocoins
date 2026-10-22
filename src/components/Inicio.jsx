@@ -28,7 +28,13 @@ export const Inicio = () => {
     <div>
       {coins.map((coin) => {
         return (
-          <a style={{ cursor: 'pointer', color: '#6a1b9a' }} key={coin.id} onClick={() => navigate("/detail/" + coin.id)}> <p>{coin.id}</p> </a>
+          <a style={{ cursor: 'pointer', color: '#6a1b9a' }} key={coin.id} onClick={() => navigate("/detail/" + coin.id)}> <p>{coin.id}</p>
+          <button
+            className="bg-blue-500 text-white px-4 py-2 rounded mt-2 hover:bg-blue-700"
+          >
+            Agregar a me gusta
+          </button>
+          </a>
         )
       })}
     </div>
